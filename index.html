@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow — Smart Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="app-header">
+      <h1>&#9889; TaskFlow</h1>
+      <p class="tagline">Stay organized. Stay productive.</p>
+    </header>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-num" id="stat-total">0</span>
+        <span class="stat-label">Total</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" id="stat-active">0</span>
+        <span class="stat-label">Active</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" id="stat-done">0</span>
+        <span class="stat-label">Done</span>
+      </div>
+    </div>
+
+    <!-- Add Task Form -->
+    <form id="task-form" class="task-form">
+      <input
+        type="text"
+        id="task-input"
+        placeholder="What needs to be done?"
+        required
+        autocomplete="off"
+      >
+      <select id="task-priority">
+        <option value="low">Low</option>
+        <option value="medium" selected>Medium</option>
+        <option value="high">High</option>
+      </select>
+      <button type="submit">+ Add</button>
+    </form>
+
+    <!-- Filter & Search -->
+    <div class="toolbar">
+      <input type="text" id="search-input" placeholder="Search tasks...">
+      <div class="filter-btns">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="active">Active</button>
+        <button class="filter" data-filter="done">Done</button>
+      </div>
+    </div>
+
+    <!-- Task List -->
+    <ul id="task-list" class="task-list"></ul>
+
+    <!-- Empty State -->
+    <div id="empty-state" class="empty-state">
+      <p>No tasks yet. Add your first task above!</p>
+    </div>
+
+    <!-- Clear All -->
+    <div class="actions">
+      <button id="clear-done" class="btn-clear">Clear Completed</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
